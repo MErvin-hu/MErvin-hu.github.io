@@ -96,8 +96,8 @@
         "start":"16:00:00",
         "end":"19:00:00",
         "subject":"Informatika oktatása, versenyfeladatok",
-        "prof":"Szűcs Miklós",
-        "room":"-"
+        "prof":"Dr. Kovács László",
+        "room":"Inf.114"
     },
     {
         "date":"2025.03.28",
@@ -106,7 +106,7 @@
         "end":"15:50:00",
         "subject":"Informatika oktatása, versenyfeladatok",
         "prof":"Szűcs Miklós",
-        "room":"-"
+        "room":"Inf.114"
     },
     {
         "date":"2025.04.04",
@@ -114,8 +114,8 @@
         "start":"12:30:00",
         "end":"16:00:00",
         "subject":"Informatika oktatása, versenyfeladatok",
-        "prof":"Szűcs Miklós",
-        "room":"-"
+        "prof":"Dr. Kovács László",
+        "room":"Inf.114"
     },
     {
         "date":"2025.04.05",
@@ -151,6 +151,6 @@
         "end":"15:50:00",
         "subject":"Informatika oktatása, versenyfeladatok",
         "prof":"Szűcs Miklós",
-        "room":null
+        "room":"Inf.114"
     }
 ]
