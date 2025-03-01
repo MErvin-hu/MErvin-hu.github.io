@@ -1,6 +1,4 @@
-[
-
-        {
+[        {
         "date":"2025.03.07",
         "day":"Péntek",
         "start":"13:00:00",
@@ -18,8 +16,7 @@
         "prof":"Dr. Trohák Attila",
         "room":"Inf. fsz. 5."
     },
-    
-    {
+   {
         "date":"2025.02.15",
         "day":"Szombat",
         "start":"13:00:00",
