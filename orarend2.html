@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órarend 80+10 </title>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .schedule {
+            display: grid;
+            grid-template-columns: 150px repeat(13, 50px);
+            gap: 2px;
+            align-items: start;
+            position: relative;
+        }
+        .header, .row-header {
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            background: #ddd;
+            border: 1px solid #aaa;
+        }
+        .row-header-container {
+            display: contents;
+        }
+        .row-header {
+            grid-column: span 1;
+        }
+        .cell {
+            position: relative;
+            height: 40px;
+            border: 1px solid #aaa;
+            background: #f0f0f0;
+            z-index: 1;
+            border-bottom: 2px solid black; /* Fekete vonal a táblázat sorai alatt */
+        }
+        .event {
+            position: relative;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .day-container {
+            display: flex;
+            flex-direction: column;
+	    border-bottom: 1px solid black; /* Fekete vonal a táblázat sorai alatt */
+        }
+    </style>
+</head>
+<body>
+    <h1>Órarend 80+10</h1>
+    <div class="schedule" id="schedule"></div>
+    
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('naptar.json');
+                if (!response.ok) {
+                    throw new Error('Hiba a JSON fájl betöltésekor');
+                }
+                data = await response.json();
+                generateSchedule();
+            } catch (error) {
+                console.error('Hiba történt:', error);
+            }
+        }
+
+
+        function timeToDecimal(time) {
+            if (typeof time === "string") {
+                let [hours, minutes, seconds] = time.split(":" ).map(Number);
+                return hours + minutes / 60;
+            }
+            return time;
+        }
+
+        const subjectColors = {};
+        const colorPalette = ["#4CAF50", "#FF5733", "#3498DB", "#F1C40F", "#9B59B6", "#E74CAC"];
+        let colorIndex = 0;
+
+        function getColor(subject) {
+            if (!subjectColors[subject]) {
+                subjectColors[subject] = colorPalette[colorIndex % colorPalette.length];
+                colorIndex++;
+            }
+            return subjectColors[subject];
+        }
+        
+        function generateSchedule() {
+            const schedule = document.getElementById("schedule");
+            schedule.innerHTML = "";
+            
+            // Fejléc létrehozása
+            schedule.innerHTML += '<div class="header">Dátum / Idő</div>';
+            for (let i = 8; i <= 20; i++) {
+                schedule.innerHTML += `<div class="header">${i}:00</div>`;
+            }
+            
+            // Csoportosítás napok szerint
+            let groupedData = {};
+            data.forEach(event => {
+                if (!groupedData[event.date]) {
+                    groupedData[event.date] = [];
+                }
+                groupedData[event.date].push(event);
+            });
+            
+            // Sorok létrehozása
+            Object.keys(groupedData).forEach(date => {
+                schedule.innerHTML += `<div class="row-header">${date} \n ${groupedData[date][0].day}</div>`;
+                const dayContainer = document.createElement("div");
+                dayContainer.classList.add("day-container");
+                dayContainer.style.gridColumn = `span 13`;
+                
+                groupedData[date].forEach(event => {
+                    const eventDiv = document.createElement("div");
+                    eventDiv.classList.add("event");
+                    const startDecimal = timeToDecimal(event.start);
+                    const endDecimal = timeToDecimal(event.end);
+                    const duration = endDecimal - startDecimal;
+                    eventDiv.style.width = `${duration * 50}px`;
+                    eventDiv.style.marginLeft = `${(startDecimal - 8) * 50}px`;
+                    eventDiv.style.background = getColor(event.subject);
+                    eventDiv.innerText = `${event.subject} \n ${event.prof} (${event.room}) \n ${event.start} - ${event.end}`;
+                    dayContainer.appendChild(eventDiv);
+                });
+                schedule.appendChild(dayContainer);
+            });
+        }
+ fetchData();
+        generateSchedule();
+    </script>
+</body>
+</html>
