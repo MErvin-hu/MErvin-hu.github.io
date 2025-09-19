@@ -134,4 +134,37 @@
 "subject":"Multimédiás eszközök",
 "prof":"Dr. Varga Attila",
 "room":"Inf.200.labor"}
+   ,
+    {
+"date":"2025.10.11",
+"day":"Péntek",
+"start":"8:00:00",
+"end":"12:00:00",
+"subject":"Adatstruktúrák és algoritmusok",
+"prof":"Dr. Herendi Tamás",
+"room":"-"},
+    {
+"date":"2025.10.25",
+"day":"Szombat",
+"start":"8:00:00",
+"end":"12:00:00",
+"subject":"Adatstruktúrák és algoritmusok",
+"date":"prof":"Dr. Herendi Tamás",
+"room":"OL"},
+    {
+"date":"2025.10.31",
+"day":"Péntek",
+"start":"14:00:00",
+"end":"18:00:00",
+"subject":"Adatstruktúrák és algoritmusok",
+"prof":"Dr. Herendi Tamás",
+"room":"OL"},
+    {
+"date":"2025.11.15",
+"day":"Szombat",
+"start":"8:00:00",
+"end":"12:00:00",
+"subject":"Adatstruktúrák és algoritmusok",
+"prof":"Dr. Herendi Tamás",
+"room":"-"}
 ]
