@@ -1,5 +1,32 @@
 [       
    {
+"date":"2025.09.19",
+"day":"Péntek",
+"start":"16:00:00",
+"end":"20:00:00",
+"subject":"Matematika II",
+"prof":"Dr. Kertész Dávid Csaba",
+"room":"A/4 341"
+},
+     {
+"date":"2025.09.27",
+"day":"Szombat",
+"start":"8:00:00",
+"end":"12:00:00",
+"subject":"Matematika II",
+"prof":"Dr. Kertész Dávid Csaba",
+"room":"online"
+},
+    {
+"date":"2025.10.04",
+"day":"Szombat",
+"start":"8:00:00",
+"end":"12:00:00",
+"subject":"Matematika II",
+"prof":"Dr. Kertész Dávid Csaba",
+"room":"online"
+},
+   {
 "date":"2025.10.03",
 "day":"Péntek",
 "start":"16:00:00",
@@ -35,33 +62,8 @@
 "prof":"Dr. Árvai László",
 "room":"Inf. Ép. I. em. 102. labor"
 },
-    {
-"date":"2025.09.19",
-"day":"Péntek",
-"start":"16:00:00",
-"end":"20:00:00",
-"subject":"Matematika II",
-"prof":"Dr. Kertész Dávid Csaba",
-"room":"A/4 341"
-},
-    {
-"date":"2025.09.27",
-"day":"Szombat",
-"start":"8:00:00",
-"end":"12:00:00",
-"subject":"Matematika II",
-"prof":"Dr. Kertész Dávid Csaba",
-"room":"online"
-},
-    {
-"date":"2025.10.04",
-"day":"Szombat",
-"start":"8:00:00",
-"end":"12:00:00",
-"subject":"Matematika II",
-"prof":"Dr. Kertész Dávid Csaba",
-"room":"online"
-},
+   
+  
     {
 "date":"2025.11.21",
 "day":"Szombat",
