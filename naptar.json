@@ -1,11 +1,11 @@
 [       
    {
-"date":"2025.10.03",
-"day":"Péntek",
-"start":"16:00",
-"end":"19:20",
-"subject":"Objektum orientált programozás (Python)",
-"prof":"Dr. Árvai László",
-"room":"Inf. Ép. I. em. 102. labor"
- }
+        "date":"2025.02.15",
+        "day":"Szombat",
+        "start":"13:00:00",
+        "end":"16:30:00",
+        "subject":"Információs rendszerek védelme",
+        "prof":"Dr. Wágner György",
+        "room":"-"
+    }
 ]
